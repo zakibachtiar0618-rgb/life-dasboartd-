@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <button id="theme-toggle" class="btn">🌙 Mode Gelap</button>
+    </header>
+
+    <main class="dashboard-container">
+        <!-- Bagian Sapaan & Waktu -->
+        <section class="card greeting-section">
+            <h1 id="time-display">00:00:00</h1>
+            <p id="date-display">Hari, Tanggal Bulan Tahun</p>
+            <h2 id="greeting-text">Selamat datang, <span id="name-display" contenteditable="true">User</span> ✏️</h2>
+            <small>Klik nama di atas untuk mengubahnya</small>
+        </section>
+
+        <!-- Bagian Pomodoro Focus Timer -->
+        <section class="card timer-section">
+            <h3> Focus Timer</h3>
+            <div id="timer-display">25:00</div>
+            <div class="timer-controls">
+                <button id="timer-start" class="btn btn-success">Mulai</button>
+                <button id="timer-stop" class="btn btn-danger">Berhenti</button>
+                <button id="timer-reset" class="btn btn-secondary">Reset</button>
+            </div>
+            <div class="timer-custom">
+                <input type="number" id="custom-minutes" value="25" min="1" max="60">
+                <button id="set-timer" class="btn">Atur Menit</button>
+            </div>
+        </section>
+
+        <!-- Bagian To-Do List -->
+        <section class="card todo-section">
+            <h3>📝 Daftar Tugas</h3>
+            <form id="todo-form">
+                <input type="text" id="todo-input" placeholder="Tambah tugas baru..." required>
+                <button type="submit" class="btn btn-primary">Tambah</button>
+            </form>
+            <p id="todo-error" class="error-text" style="display: none;">Tugas ini sudah ada di daftar!</p>
+            <ul id="todo-list"></ul>
+        </section>
+
+        <!-- Bagian Tautan Cepat (Quick Links) -->
+        <section class="card links-section">
+            <h3>🔗 Tautan Cepat</h3>
+            <form id="link-form">
+                <input type="text" id="link-name" placeholder="Nama Situs (cth: Google)" required>
+                <input type="url" id="link-url" placeholder="URL (cth: https://google.com)" required>
+                <button type="submit" class="btn btn-primary">Tambah Link</button>
+            </form>
+            <div id="links-container" class="links-grid"></div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
+
